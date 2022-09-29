@@ -8,7 +8,7 @@ pswd=''
 def loginaction(request):
     global em,pswd
     if request.method=="POST":
-        m=sql.connect(host="localhost",user="root",password="",database="website")
+        m=sql.connect(host="localhost",user="root",password=" ",database="website")
         cursor=m.cursor()
         d=request.POST
         for key,value in d.items():
@@ -21,10 +21,10 @@ def loginaction(request):
         cursor.execute(c)
         t=tuple(cursor.fetchall())
         if t==():
-            return render(request,'error.html')
+            return render(request,"error.html")
         else:
             return render(request,"welcome.html")
 
     
-    return render(request,'login_page.html')
+    return render(request,"login_page.html")
 

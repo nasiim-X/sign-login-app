@@ -29,5 +29,5 @@ def signaction(request):
         cursor.execute(c)
         m.commit()
     
-    return render(request,'signup_page.html')
+    return render(request,"signup_page.html")
 
